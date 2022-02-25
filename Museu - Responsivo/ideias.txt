@@ -1,0 +1,29 @@
+Site para um museu
+navbar com o logo do museu
+ela inicialmente é branca mas quando scrolla fica preta
+(precisa de JS)
+
+Esquema de cores - cores amadeiras, branco, preto
+Imagem no inicio da pagina - ficar trocando as imagens
+conforme o tempo passa
+algo escrito em cima dessa imagem do começo
+
+Primeiro bloco de informação:
+Quadro com pintura que da zoom com hover
+Linha HR na vertical separando imagem do texto
+Breve descrição do museu
+
+Segundo bloco de informação:
+Foto da estátua que da zoom
+Linha HR na vertical separando imagem do texto
+Link para a galeria
+
+Terceiro bloco de informação:
+Maps do google com a localização do museu
+
+Footer
+Colocar informações típicas do footer, links para redes
+
+Galeria
+Galeria com imagens de obras, quando se clica em uma imagem
+é possível dar zoom nela por meio de um slide
