@@ -1,0 +1,309 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 5px 650px 500px 370px 200px;
+    grid-template-areas: 
+        "nav nav nav nav"
+        "main main main main"
+        "image desc desc desc"
+        "content1 content2 content3 content4"
+        "footer footer footer footer";
+    gap: 3rem;
+}
+
+nav {
+    grid-area: nav;
+    font-size: 18px;
+    width: 100%;
+    height: 50px;
+    background: white;
+    position: fixed;
+    top: 0;
+    margin: 0;
+}
+
+.logo {
+    float: left;
+    background-position: center;
+    width: 100px;
+    height: 47px;
+}
+
+.nav-item a {
+    float: right;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    text-decoration: underline black solid 3px;
+}
+
+main {
+    background: url("img/main1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: main;
+}
+
+main > img {
+    filter: brightness(50%);
+}
+
+main * {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+#image {
+    background: url("img/painting3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-area: image;
+    margin-left: 5%;
+}
+
+#desc {
+    /*background: #18feee;*/
+    border-left: 2px solid black;
+    grid-area: desc;
+    font-size: 20px;
+    color:  black;
+}
+
+#desc h2 {
+    margin: 5%;
+}
+
+#desc p {
+    font-size: 20px;
+    margin: 5%;
+}
+
+.card-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 65%;
+}
+
+#content1 {
+    /*background: #6fffd2;*/
+    grid-area: content1;
+    margin: 25px;
+    border: 2px solid black;
+}
+
+#content1 p {
+    font-size: 16px;
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+#content2 {
+    /*background: #64ffda;*/
+    grid-area: content2;
+    margin: 25px;
+    border: 2px solid black;
+}
+
+#content2 p {
+    font-size: 16px;
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+#content3 {
+    /*background: #73ffba;*/
+    grid-area: content3;
+    margin: 25px;
+    border: 2px solid black;
+}
+
+#content3 p {
+    font-size: 16px;
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+#content4 {
+    /*background: #73feaa;*/
+    grid-area: content4;
+    margin: 25px;
+    border: 2px solid black;
+}
+
+#content4 p {
+    font-size: 16px;
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+footer {
+    background:  black;
+    color:  white;
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: auto auto; 
+    grid-template-rows: auto auto auto auto auto;
+    text-align: left;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer a {
+    background:  black;
+    color:  white;
+    grid-area: footer;
+    text-align: left;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer div {
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+@media only screen and (max-width:550px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 20px 300px 0px 300px 250px 250px 250px 250px 200px;
+                         /*50px 550px 500px 400px 300px*/
+        grid-template-areas: 
+            "nav"
+            "main"
+            "image"
+            "desc"
+            "content1"
+            "content2"
+            "content3"
+            "content4"
+            "footer";
+        gap: 2rem;
+    }
+
+    nav {
+        grid-area: nav;
+        font-size: 12px;
+        height: 80px;
+    }
+
+    .nav-item a {
+        float: right;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .nav-item a:hover {
+        text-decoration: underline black solid 1px;
+    }
+
+    main * {
+        font-size: 16px;
+    }
+
+    #image {
+        background: white;
+    }
+
+    #desc {
+        border-left: none;
+    }
+
+    #desc h2 {
+        font-size: 18px;
+    }
+    
+    #desc p {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 8px;
+        grid-template-columns: auto; 
+    }
+
+    footer div {
+        margin-left: 85px;
+    }
+
+    footer a {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (min-height:1745px) {
+    .container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 20px 800px 700px 700px 305px;
+        grid-template-areas: 
+            "nav nav nav nav"
+            "main main main main"
+            "image desc desc desc"
+            "content1 content2 content3 content4"
+            "footer footer footer footer";
+        gap: 5rem;
+    }
+
+    nav {
+        font-size: 30px;
+        height: 100px;
+    }
+
+    .nav-item a {
+        padding: 40px 40px;
+    }
+
+    #desc {
+        /*background: #18feee;*/
+        border-left: 2px solid black;
+        grid-area: desc;
+        font-size: 20px;
+        color:  black;
+    }
+    
+    #desc h2 {
+        font-size: 50px;
+        margin: 1%;
+    }
+    
+    #desc p {
+        font-size: 40px;
+        margin: 1%;
+    }
+
+    #content1 {
+        margin: 50px;
+    }
+    
+    #content2 {
+        margin: 50px;
+    }
+    
+    #content3 {
+        margin: 50px;
+    }
+    
+    #content4 {
+        margin: 50px;
+    }
+}
