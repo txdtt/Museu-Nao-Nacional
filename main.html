@@ -3,14 +3,15 @@
     <head>
         <title>Museu Não-Nacional</title>
         <link href="style.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a3a422c01f.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="container" id="inicio">
             <nav>
-                <div class="logo"><a href="#image"><img src="img/logo2.png"></div>
-                <div class="nav-item"><a href="#">Contato</a></div>
-                <div class="nav-item"><a href="#">Visite</a></div>
-                <div class="nav-item"><a href="#content1">Explorar</a></div>
+                <div class="logo"><a href="#image"></div>
+                <div class="nav-item"><a href="contact.html">Contato</a></div>
+                <div class="nav-item"><a href="#visite">Visite</a></div>
+                <div class="nav-item"><a href="acervo.html">Acervo</a></div>
                 <div class="nav-item"><a href="#image">Sobre o Museu</a></div>
                 <div class="nav-item"><a href="#inicio">Início</a></div>
             </nav>
@@ -33,39 +34,41 @@
                     Mauris nibh orci, interdum et ipsum pulvinar, dapibus fermentum lorem.
                 </p>
             </div>
-            <div id="content1">
-                <a href="#"><img src="img/painting.jpg" class="card-img"></a>
-                <p>Teste texto teste texto</p>
+            <div id="acervo">
+                <div id="acervo-banner">
+                    <p>Conheça o nosso acervo</p>
+                    <a href="acervo.html">Acessar</a>
+                </div>
             </div>
-            <div id="content2">
-                <a href="#"><img src="img/painting.jpg" class="card-img"></a>
-                <p>Teste texto teste texto</p>
+            <div id="visite">
+                <h2>Conheça o Museu</h2>
+                <div id="map"></div>
             </div>
-            <div id="content3">
-                <a href="#"><img src="img/painting.jpg" class="card-img"></a>
-                <p>Teste texto teste texto</p>
-            </div>
-            <div id="content4">
-                <a href="#"><img src="img/painting.jpg" class="card-img"></a>
-                <p>Teste texto teste texto</p>
+            <div id="contato">
+                <h2>Está com alguma dúvida? Entre em contato</h2>
+                <a href="contact.html">Contato</a>
             </div>
             <footer>
                 <div>
                     <img src="img/logo2.png">
-                    <p>Site do Museu Não-Nacional</p>
-                    Instagram
-                    Twitter
-                    Youtube
+                    <p>Museu Não-Nacional</p>
+                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram fa-2x fa-fw"></i></a>
+                    <a href="https://www.twitter.com/"><i class="fa-brands fa-twitter fa-2x fa-fw"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube fa-2x fa-fw"></i></a>
+                    <a href="https://github.com/txdtt/"><i class="fa-brands fa-github fa-2x fa-fw"></i></a>
                 </div>
                 <div>
                     <a href="#inicio"><p>Início</p></a>
-                    <a href="#image"><p>Sobre o Museu Não-Nacional</p></a>
-                    <a href="#content1"><p>Explorar</p></a>
-                    <a href="#inicio"><p>Contato</p></a>
-                    Criado por: Eduardo R. Teixeira
+                    <a href="#image"><p>Sobre o Museu</p></a>
+                    <a href="#acervo"><p>Acervo</p></a>
+                    <a href="#visite"><p>Visite</p></a>
+                    <a href="contact.html"><p>Contato</p></a>
                 </div>
             </div>
             </footer>
         </div>
+        <script src="script.js"></script>
+        <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcm-EI4-do9DkLXf3y3Q84W7QEiE3p2y4&callback=initMap&v=weekly" async></script>
     </body>
 </html>
