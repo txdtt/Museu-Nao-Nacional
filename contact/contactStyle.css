@@ -1,0 +1,109 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'arial', Times, serif;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1px 1px 600px;
+    grid-template-areas: 
+        "nav nav nav nav"
+        "blank blank blank blank"
+        "form form form form";
+    gap: 3rem;
+}
+
+nav {
+    grid-area: nav;
+    font-size: 18px;
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    z-index: 1;
+    transition: 0.1s ease-in-out;
+}
+
+.logo {
+    background-image: url("../img/logoAlt.png");
+    float: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100px;
+    height: 47px;
+    margin-left: 5px;
+    margin-top: -2px;
+}
+
+.nav-item a {
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-item a:hover {
+    text-decoration: underline white solid 3px;
+}
+
+#blank {
+    height: 20px;
+    width: auto;
+}
+
+#form-content {
+    grid-area: form;
+    background-color: #fff;
+    padding: 30px;
+    margin: 0 auto;
+    width: 50%;
+    height: 450px;
+    border: 2px solid black;
+    top: 50%;
+    left: 50%;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border: 2px solid rgb(221, 221, 221);
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 12px;
+    resize: none;
+}
+
+input[type=submit] {
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+    padding: 8px;
+    border-radius: 22px;
+    font-size: 18px;
+    transition: 0.2s ease;
+    text-decoration: none;
+}
+
+input[type=submit]:hover {
+    color: black;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: underline black solid 3px;
+}
