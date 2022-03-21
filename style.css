@@ -1,0 +1,1023 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'arial', Times, serif;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1px 615px 500px 500px 500px 300px 200px;
+    grid-template-areas: 
+        "nav nav nav nav"
+        "main main main main"
+        "image desc desc desc"
+        "acervo acervo acervo acervo"
+        "visite visite visite visite"
+        "content1 content2 content3 content4"
+        "footer footer footer footer";
+    gap: 3rem;
+}
+
+nav {
+    grid-area: nav;
+    font-size: 18px;
+    width: 100%;
+    height: 52px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    z-index: 1;
+    transition: 0.1s ease-in-out;
+}
+
+nav.scroll {
+    background: #0a0a0a;
+}
+
+.logo {
+    background-image: url("img/logo.png");
+    float: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100px;
+    height: 47px;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.nav-item a {
+    float: right;
+    color: black;
+    text-align: center;
+    margin-top: 3px;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.nav-item a:hover {
+    text-decoration: underline black solid 3px;
+}
+
+nav.scroll a {
+    color: white;
+}
+
+nav.scroll a:hover {
+    text-decoration: underline white solid 3px;
+}
+
+/*position: relative na class "main" garante que o filtro não sofra overflow*/
+
+main {
+    grid-area: main;
+    background-image: url('img/main1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+main * {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}   
+
+#image {
+    background: url("img/painting3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: image;
+    margin-left: 5%;
+}
+
+#desc {
+    border-left: 2px solid black;
+    grid-area: desc;
+    font-size: 16px;
+    color:  black;
+}
+
+#desc h2 {
+    margin: 5%;
+}
+
+#desc p {
+    font-size: 20px;
+    margin: 5%;
+}
+
+#acervo {
+    grid-area: acervo;
+    margin: 25px; 
+    background-image: url('img/main2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#acervo::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+#acervo-banner {
+    text-align: center;
+    position: relative;
+    top: 35%;
+    left: 35%;
+    transform: translate(-35%, -35%);
+    font-size: 40px;
+    color: white;
+}
+
+#acervo a {
+    color: black;
+    background-color: white;
+    border: 0px;
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 16px;
+    transition: 0.2s ease;
+    text-decoration: none;
+}
+
+#acervo a:hover {
+    color: white;
+    background-color: black;
+}
+
+#visite {
+    grid-area: visite;
+    margin: 25px; 
+    background-image: url('img/main3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#visite::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+#visite-banner {
+    text-align: center;
+    position: relative;
+    top: 35%;
+    left: 35%;
+    transform: translate(-35%, -35%);
+    font-size: 40px;
+    color: white;
+}
+
+#visite a {
+    color: black;
+    background-color: white;
+    border: 0px;
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 16px;
+    transition: 0.2s ease;
+    text-decoration: none;
+}
+
+#visite a:hover {
+    color: white;
+    background-color: black;
+}
+
+#content1 {
+    grid-area: content1;
+    margin: 0 auto;
+    width: 250px;
+    height: 300px;
+    border: 2px solid black;
+    transition: 0.2s;
+    overflow: hidden;
+}
+
+#content1-img {
+    background-image: url("img/card1.jpg");
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#content-text {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    transition: 0.2s;
+}
+
+#content1:hover{
+    width: 265px;
+    height: 315px;
+}
+
+#content1:hover #content-text{
+    font-size: 18px;
+    line-height: 35px;
+}
+
+#content2 {
+    grid-area: content2;
+    margin: 0 auto;
+    width: 250px;
+    height: 300px;
+    border: 2px solid black;
+    transition: 0.2s;
+}
+
+#content2-img {
+    background-image: url("img/card2.jpg");
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#content2:hover {
+    width: 265px;
+    height: 315px;
+}
+
+#content2:hover #content-text{
+    font-size: 18px;
+    line-height: 35px;
+}
+
+#content3 {
+    grid-area: content3;
+    margin: 0 auto;
+    width: 250px;
+    height: 300px;
+    border: 2px solid black;
+    transition: 0.2s;
+}
+
+#content3-img {
+    background-image: url("img/card3.jpeg");
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#content3:hover {
+    width: 265px;
+    height: 315px;
+}
+
+#content3:hover #content-text{
+    font-size: 18px;
+    line-height: 35px;
+}
+
+#content4 {
+    grid-area: content4;
+    margin: 0 auto;
+    width: 250px;
+    height: 300px;
+    border: 2px solid black;
+    transition: 0.2s;
+}
+
+#content4-img {
+    background-image: url("img/card4.jpg");
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#content4:hover {
+    width: 265px;
+    height: 315px;
+}
+
+#content4:hover #content-text{
+    font-size: 18px;
+    line-height: 35px;
+}
+
+#logoFooter {
+    width: 100px;
+    height: 47px;
+}
+
+footer {
+    background:  black;
+    color:  white;
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: auto auto; 
+    grid-template-rows: auto auto auto auto auto;
+    text-align: left;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer a {
+    background:  black;
+    color:  white;
+    grid-area: footer;
+    text-align: left;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer div {
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+@media only screen and (max-width:450px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 20px 100px 0px 300px 250px 250px 250px 200px;
+                         /*50px 550px 500px 400px 300px*/
+        grid-template-areas: 
+            "nav"
+            "main"
+            "image"
+            "desc"
+            "acervo"
+            "viste"
+            "contato"
+            "footer";
+        gap: 2rem;
+    }
+
+    nav {
+        grid-area: nav;
+        font-size: 5px;
+        height: 80px;
+    }
+
+    .nav-item a {
+        float: right;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .nav-item a:hover {
+        text-decoration: underline black solid 1px;
+    }
+
+    main * {
+        font-size: 10px;
+    }
+
+    #image {
+        background: white;
+    }
+
+    #desc {
+        border-left: none;
+    }
+
+    #desc h2 {
+        font-size: 12px;
+    }
+    
+    #desc p {
+        font-size: 10px;
+    }
+
+    footer {
+        font-size: 5px;
+        grid-template-columns: auto; 
+    }
+
+    footer div {
+        margin-left: 85px;
+    }
+
+    footer a {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 20px 300px 0px 300px 250px 250px 250px 200px;
+                         /*50px 550px 500px 400px 300px*/
+        grid-template-areas: 
+            "nav"
+            "main"
+            "image"
+            "desc"
+            "acervo"
+            "viste"
+            "contato"
+            "footer";
+        gap: 2rem;
+    }
+
+    nav {
+        grid-area: nav;
+        font-size: 12px;
+        height: 80px;
+    }
+
+    .nav-item a {
+        float: right;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .nav-item a:hover {
+        text-decoration: underline black solid 1px;
+    }
+
+    main * {
+        font-size: 16px;
+    }
+
+    #image {
+        background: white;
+    }
+
+    #desc {
+        border-left: none;
+    }
+
+    #desc h2 {
+        font-size: 18px;
+    }
+    
+    #desc p {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 8px;
+        grid-template-columns: auto; 
+    }
+
+    footer div {
+        margin-left: 85px;
+    }
+
+    footer a {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (min-height:1745px) {
+    .container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 20px 800px 700px 700px 700px 700px 305px;
+        grid-template-areas: 
+            "nav nav nav nav"
+            "main main main main"
+            "image desc desc desc"
+            "acervo acervo acervo acervo"
+            "visite visite visite visite"
+            "contato contato contato contato"
+            "footer footer footer footer";
+        gap: 5rem;
+    }
+
+    nav {
+        font-size: 30px;
+        height: 100px;
+    }
+
+    .nav-item a {
+        padding: 40px 40px;
+    }
+
+    #desc {
+        border-left: 2px solid black;
+        grid-area: desc;
+        font-size: 20px;
+        color:  black;
+    }
+    
+    #desc h2 {
+        font-size: 50px;
+        margin: 1%;
+    }
+    
+    #desc p {
+        font-size: 40px;
+        margin: 1%;
+    }
+
+    #content1 {
+        margin: 50px;
+    }
+    
+    #content2 {
+        margin: 50px;
+    }
+    
+    #content3 {
+        margin: 50px;
+    }
+    
+    #content4 {
+        margin: 50px;
+    }
+}
+
+/*
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'arial', Times, serif;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1px 615px 500px 500px 500px 300px 200px;
+    grid-template-areas: 
+        "nav nav nav nav"
+        "main main main main"
+        "image desc desc desc"
+        "acervo acervo acervo acervo"
+        "visite visite visite visite"
+        "content1 content2 content3 content4"
+        "footer footer footer footer";
+    gap: 3rem;
+}
+
+nav {
+    grid-area: nav;
+    font-size: 18px;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    z-index: 1;
+    transition: 0.1s ease-in-out;
+}
+
+nav.scroll {
+    background: #0a0a0a;
+}
+
+.logo {
+    background-image: url("img/logo2.png");
+    float: left;
+    background-position: center;
+    width: 100px;
+    height: 47px;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-item a {
+    float: right;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-item a:hover {
+    text-decoration: underline black solid 3px;
+}
+
+nav.scroll a {
+    color: white;
+}
+
+nav.scroll a:hover {
+    text-decoration: underline white solid 3px;
+}
+
+main {
+    grid-area: main;
+    background-color: #000;
+}
+
+main::before {
+    content: "";
+    background-image: url('img/main1.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.6;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main * {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}   
+
+#image {
+    background: url("img/painting3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: image;
+    margin-left: 5%;
+}
+
+#desc {
+    border-left: 2px solid black;
+    grid-area: desc;
+    font-size: 16px;
+    color:  black;
+}
+
+#desc h2 {
+    margin: 5%;
+}
+
+#desc p {
+    font-size: 20px;
+    margin: 5%;
+}
+
+#acervo {
+    grid-area: acervo;
+    margin: 25px;    
+    background-image: url("img/main2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#acervo-banner {
+    text-align: center;
+    position: relative;
+    top: 35%;
+    left: 35%;
+    transform: translate(-35%, -35%);
+    font-size: 40px;
+    color: white;
+}
+
+#acervo a {
+    color: black;
+    background-color: white;
+    border: 0px;
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 16px;
+    transition: 0.2s ease;
+    text-decoration: none;
+}
+
+#acervo a:hover {
+    color: white;
+    background-color: black;
+}
+
+#visite {
+    grid-area: visite;
+    margin: 25px;    
+    background-image: url("img/main3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#visite-banner {
+    text-align: center;
+    position: relative;
+    top: 35%;
+    left: 35%;
+    transform: translate(-35%, -35%);
+    font-size: 40px;
+    color: white;
+}
+
+#visite a {
+    color: black;
+    background-color: white;
+    border: 0px;
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 16px;
+    transition: 0.2s ease;
+    text-decoration: none;
+}
+
+#visite a:hover {
+    color: white;
+    background-color: black;
+}
+
+#content1 {
+    grid-area: content1;
+    margin: 0 auto;
+    width: 250px;
+    height: 300px;
+    border: 2px solid black;
+}
+
+#content2 {
+    grid-area: content2;
+    margin: 0 auto;
+    width: 250px;
+    height: 300px;
+    border: 2px solid black;
+}
+
+#content3 {
+    grid-area: content3;
+    margin: 0 auto;
+    width: 250px;
+    height: 300px;
+    border: 2px solid black;
+}
+
+#content4 {
+    grid-area: content4;
+    margin: 0 auto;
+    width: 250px;
+    height: 300px;
+    border: 2px solid black;
+}
+
+a.card-content {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+footer {
+    background:  black;
+    color:  white;
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: auto auto; 
+    grid-template-rows: auto auto auto auto auto;
+    text-align: left;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer a {
+    background:  black;
+    color:  white;
+    grid-area: footer;
+    text-align: left;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer div {
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+@media only screen and (max-width:450px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 20px 100px 0px 300px 250px 250px 250px 200px;
+        grid-template-areas: 
+            "nav"
+            "main"
+            "image"
+            "desc"
+            "acervo"
+            "viste"
+            "contato"
+            "footer";
+        gap: 2rem;
+    }
+
+    nav {
+        grid-area: nav;
+        font-size: 5px;
+        height: 80px;
+    }
+
+    .nav-item a {
+        float: right;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .nav-item a:hover {
+        text-decoration: underline black solid 1px;
+    }
+
+    main * {
+        font-size: 10px;
+    }
+
+    #image {
+        background: white;
+    }
+
+    #desc {
+        border-left: none;
+    }
+
+    #desc h2 {
+        font-size: 12px;
+    }
+    
+    #desc p {
+        font-size: 10px;
+    }
+
+    footer {
+        font-size: 5px;
+        grid-template-columns: auto; 
+    }
+
+    footer div {
+        margin-left: 85px;
+    }
+
+    footer a {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 20px 300px 0px 300px 250px 250px 250px 200px;
+        grid-template-areas: 
+            "nav"
+            "main"
+            "image"
+            "desc"
+            "acervo"
+            "viste"
+            "contato"
+            "footer";
+        gap: 2rem;
+    }
+
+    nav {
+        grid-area: nav;
+        font-size: 12px;
+        height: 80px;
+    }
+
+    .nav-item a {
+        float: right;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .nav-item a:hover {
+        text-decoration: underline black solid 1px;
+    }
+
+    main * {
+        font-size: 16px;
+    }
+
+    #image {
+        background: white;
+    }
+
+    #desc {
+        border-left: none;
+    }
+
+    #desc h2 {
+        font-size: 18px;
+    }
+    
+    #desc p {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 8px;
+        grid-template-columns: auto; 
+    }
+
+    footer div {
+        margin-left: 85px;
+    }
+
+    footer a {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (min-height:1745px) {
+    .container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 20px 800px 700px 700px 700px 700px 305px;
+        grid-template-areas: 
+            "nav nav nav nav"
+            "main main main main"
+            "image desc desc desc"
+            "acervo acervo acervo acervo"
+            "visite visite visite visite"
+            "contato contato contato contato"
+            "footer footer footer footer";
+        gap: 5rem;
+    }
+
+    nav {
+        font-size: 30px;
+        height: 100px;
+    }
+
+    .nav-item a {
+        padding: 40px 40px;
+    }
+
+    #desc {
+        border-left: 2px solid black;
+        grid-area: desc;
+        font-size: 20px;
+        color:  black;
+    }
+    
+    #desc h2 {
+        font-size: 50px;
+        margin: 1%;
+    }
+    
+    #desc p {
+        font-size: 40px;
+        margin: 1%;
+    }
+
+    #content1 {
+        margin: 50px;
+    }
+    
+    #content2 {
+        margin: 50px;
+    }
+    
+    #content3 {
+        margin: 50px;
+    }
+    
+    #content4 {
+        margin: 50px;
+    }
+}
+
+*/
